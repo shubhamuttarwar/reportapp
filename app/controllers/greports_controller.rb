@@ -63,7 +63,7 @@ class GreportsController < ApplicationController
 
   def import
     Greport.import(params[:file])
-    redirect_to root_path, notice: "Imported successfully"
+    redirect_to(greports_path,notice: "Imported successfully")
   end
   private
     # Use callbacks to share common setup or constraints between actions.
