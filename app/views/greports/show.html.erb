@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Roll:</strong>
+  <%= @greport.roll %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @greport.name %>
+</p>
+
+<p>
+  <strong>Marksobt:</strong>
+  <%= @greport.marksobt %>
+</p>
+
+<p>
+  <strong>Marksout:</strong>
+  <%= @greport.marksout %>
+</p>
+
+<p>
+  <strong>Result:</strong>
+  <%= @greport.result %>
+</p>
+
+<p>
+  <strong>Sgpa:</strong>
+  <%= @greport.sgpa %>
+</p>
+
+<%= link_to 'Edit', edit_greport_path(@greport) %> |
+<%= link_to 'Back', greports_path %>

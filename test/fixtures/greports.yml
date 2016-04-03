@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  roll: 9.99
+  name: MyString
+  marksobt: 9.99
+  marksout: 9.99
+  result: MyString
+  sgpa: 1.5
+
+two:
+  roll: 9.99
+  name: MyString
+  marksobt: 9.99
+  marksout: 9.99
+  result: MyString
+  sgpa: 1.5

@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Greports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Roll</th>
+      <th>Name</th>
+      <th>Marksobt</th>
+      <th>Marksout</th>
+      <th>Result</th>
+      <th>Sgpa</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @greports.each do |greport| %>
+      <tr>
+        <td><%= greport.roll %></td>
+        <td><%= greport.name %></td>
+        <td><%= greport.marksobt %></td>
+        <td><%= greport.marksout %></td>
+        <td><%= greport.result %></td>
+        <td><%= greport.sgpa %></td>
+        <td><%= link_to 'Show', greport %></td>
+        <td><%= link_to 'Edit', edit_greport_path(greport) %></td>
+        <td><%= link_to 'Destroy', greport, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h2>Import Data</h2>
+  <%= form_tag  import_greports_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+<%= link_to 'New Greport', new_greport_path %>

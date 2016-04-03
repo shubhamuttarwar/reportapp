@@ -1,0 +1,41 @@
+<%= form_for(@greport) do |f| %>
+  <% if @greport.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@greport.errors.count, "error") %> prohibited this greport from being saved:</h2>
+
+      <ul>
+      <% @greport.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :roll %><br>
+    <%= f.text_field :roll %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :marksobt %><br>
+    <%= f.text_field :marksobt %>
+  </div>
+  <div class="field">
+    <%= f.label :marksout %><br>
+    <%= f.text_field :marksout %>
+  </div>
+  <div class="field">
+    <%= f.label :result %><br>
+    <%= f.text_field :result %>
+  </div>
+  <div class="field">
+    <%= f.label :sgpa %><br>
+    <%= f.text_field :sgpa %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
