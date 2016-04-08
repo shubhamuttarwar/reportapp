@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Greports</h1>
-
+<h1>Generate Reports</h1>
+<p>Check and upload the content</p>
 <div class="media">
   <div class="media-body">
     <table class="table table-hover">
@@ -41,5 +41,5 @@
   <%= form_tag  import_greports_path, multipart: true do %>
   <%= file_field_tag :file %>
   <%= submit_tag "Import" %>
-<% end %>
+<% end %><br>
 <%= link_to 'New Greport', new_greport_path %>
