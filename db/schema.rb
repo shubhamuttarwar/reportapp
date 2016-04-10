@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160410195849) do
+ActiveRecord::Schema.define(version: 20160410204121) do
 
   create_table "greports", force: :cascade do |t|
     t.decimal  "roll"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160410195849) do
     t.integer  "sem"
     t.text     "session"
     t.text     "batch"
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|

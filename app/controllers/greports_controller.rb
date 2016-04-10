@@ -25,6 +25,7 @@ class GreportsController < ApplicationController
   # POST /greports.json
   def create
     @greport = Greport.new(greport_params)
+    @greport.user = User.first
 
     respond_to do |format|
       if @greport.save
@@ -73,6 +74,6 @@ class GreportsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def greport_params
-      params.require(:greport).permit(:roll, :name, :marksobt, :marksout, :result, :sgpa)
+      params.require(:greport).permit(:roll, :name, :marksobt, :marksout, :percent, :year, :exam, :sem, :session, :batch, :result, :sgpa)
     end
 end
