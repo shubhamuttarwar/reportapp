@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160410204121) do
+ActiveRecord::Schema.define(version: 20160410212214) do
 
   create_table "greports", force: :cascade do |t|
     t.decimal  "roll"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20160410204121) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_digest"
   end
 
 end
