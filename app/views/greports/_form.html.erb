@@ -1,6 +1,7 @@
-<%= render 'shared/errors' %>
+<%= render 'shared/errors', obj: @greport %>
 <%= form_for(@greport) do |f| %>
-
+<div class = "row">
+  <div class =" col-md-6">
    <div class="field">
     <%= f.label :roll %><br>
     <%= f.text_field :roll %>
@@ -24,6 +25,33 @@
   <div class="field">
     <%= f.label :sgpa %><br>
     <%= f.text_field :sgpa %>
+  </div>
+  </div>
+  <div class =" col-md-6">
+    <div class="field">
+    <%= f.label :percent %><br>
+    <%= f.text_field :percent %>
+  </div>
+    <div class="field">
+    <%= f.label :year %><br>
+    <%= f.text_field :year %>
+  </div>
+    <div class="field">
+    <%= f.label :exam %><br>
+    <%= f.text_field :exam %>
+  </div>
+    <div class="field">
+    <%= f.label :sem %><br>
+    <%= f.text_field :sem %>
+  </div>
+    <div class="field">
+    <%= f.label :session %><br>
+    <%= f.text_field :session %>
+  </div>
+    <div class="field">
+    <%= f.label :batch %><br>
+    <%= f.text_field :batch %>
+  </div>
   </div>
   <div class="actions">
     <%= f.submit %>

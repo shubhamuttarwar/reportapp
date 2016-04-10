@@ -28,7 +28,7 @@ class GreportsController < ApplicationController
 
     respond_to do |format|
       if @greport.save
-        format.html { redirect_to @greport, notice: 'Greport was successfully created.' }
+        format.html { redirect_to @greport,  notice: 'Record was successfully created.' }
         format.json { render :show, status: :created, location: @greport }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class GreportsController < ApplicationController
   def update
     respond_to do |format|
       if @greport.update(greport_params)
-        format.html { redirect_to @greport, notice: 'Greport was successfully updated.' }
+        format.html { redirect_to @greport, notice: 'Record was successfully updated.' }
         format.json { render :show, status: :ok, location: @greport }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class GreportsController < ApplicationController
   def destroy
     @greport.destroy
     respond_to do |format|
-      format.html { redirect_to greports_url, notice: 'Greport was successfully destroyed.' }
+      format.html { redirect_to greports_url, notice: 'Record was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
