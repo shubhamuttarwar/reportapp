@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160403172500) do
+ActiveRecord::Schema.define(version: 20160408110247) do
 
   create_table "greports", force: :cascade do |t|
     t.decimal  "roll"
@@ -22,6 +22,12 @@ ActiveRecord::Schema.define(version: 20160403172500) do
     t.float    "sgpa"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float    "percent"
+    t.text     "exam"
+    t.integer  "year"
+    t.integer  "sem"
+    t.text     "session"
+    t.text     "batch"
   end
 
 end
