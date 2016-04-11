@@ -12,11 +12,12 @@ class Greport < ActiveRecord::Base
   validates :batch, presence: true
   validates :result, presence: true
   validates :sgpa, presence: true
-  validates :user_id, presence: true
+  #validates :user_id, presence: true
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
       Greport.create! row.to_hash
+
     end
  end
 end
