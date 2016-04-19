@@ -1,34 +1,99 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-xs-6">
+     <div id="container" style="width:100%; height:400px;"></div>
+  </div>
+  <div class = "col-xs-6">
+    <div id="container1" style="width:100%; height:400px;"></div>
+  </div>
+</div>
 
-<div id="container" style="width:100%; height:400px;"></div>
 
-<script>
-  $(function () {
-    $('#container').highcharts({
-        chart: {
-            type: 'bar'
+<div class="row">
+ <div class="container">
+    <div class="col-cs-6">
+        <script>
+          $(function () {
+            $('#container1').highcharts({
+                chart: {
+                    type: 'pie'
+                },
+                title: {
+                    text: 'Students Result'
+                },
+                xAxis: {
+                    categories: ['Pass','Fail']
+                  //categories: ['Apples', 'Bananas', 'Oranges']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Passed Students'
+                    }
+                },
+              tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
         },
-        title: {
-            text: 'Result Analyis'
-        },
-        xAxis: {
-            categories: ['Apples', 'Bananas', 'Oranges']
-        },
-        yAxis: {
-            title: {
-                text: 'Fruit eaten'
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
             }
         },
-        series: [{
-            name: 'Jane',
-            data: [1, 0, 4]
-        }, {
-            name: 'John',
-            data: [5, 7, 3]
-        }]
-    });
-});
-</script>
+
+                series: [{
+
+                    data:[{
+                      name: 'Passed',
+                      y: <%=  Greport.total_passed().to_i %>
+                }, {
+                    name: 'Failed',
+                    y:  <%= Greport.total_failed().to_i  %>
+                }]
+                }]
+            });
+        });
+        </script>
+    </div>
+  </div>
+  <div class="container">
+    <div class="col-sx-6">
+      <script>
+          $(function () {
+            $('#container').highcharts({
+                chart: {
+                    type: 'bar'
+                },
+                title: {
+                    text: 'Result Analyis'
+                },
+                xAxis: {
+                    categories: ['Apples', 'Bananas', 'Oranges']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Fruit eaten'
+                    }
+                },
+                series: [{
+                    name: 'Jane',
+                    data: [1, 0, 4]
+                }, {
+                    name: 'John',
+                    data: [5, 7, 3]
+                }]
+            });
+        });
+        </script>
+  </div>
+</div>
+</div>
 <h1>Generate Reports</h1>
 <div class="media">
   <div class="media-body">
