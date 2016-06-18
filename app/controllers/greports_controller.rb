@@ -5,11 +5,14 @@ class GreportsController < ApplicationController
   # GET /greports.json
   def index
     @greports = Greport.all
+     @toppers=Greport.all.order(percent: :desc).limit(3)
   end
 
   # GET /greports/1
   # GET /greports/1.json
   def show
+
+
   end
 
   # GET /greports/new
@@ -66,6 +69,8 @@ class GreportsController < ApplicationController
     Greport.import(params[:file])
     redirect_to(greports_path,notice: "Imported successfully")
   end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_greport

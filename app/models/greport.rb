@@ -61,29 +61,24 @@ class Greport < ActiveRecord::Base
 
 
   def self.toppers()
-    #user = Greport.maximum("percent")
+    arrayobj=[]
     x=0
-    objarray = Array.new
-    Greport.all.order(percent: :desc).limit(3).each do |d|
-     (
-       objarray[x]= d.percent
+    Greport.all.order(percent: :desc)
+    Greport.first(3).each do |user|
+        arrayobj[x]=user.percent
         x=x+1
-         )
-      end
-
-    return objarray
+    end
+    return arrayobj
   end
 
     def self.toppernames()
-      x=0
-    obarray = Array.new
-    Greport.all.order(percent: :desc).limit(3).each do |d|
-     (
-       obarray[x]= d.name
-        x=x+1
-         )
-      end
-
+    obarray=[]
+    y=0
+    Greport.all.order(percent: :desc)
+    Greport.first(3).each do |user|
+      obarray[y]=user.name
+      y=y+1
+    end
     return obarray
     end
   end

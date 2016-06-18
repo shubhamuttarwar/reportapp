@@ -21,7 +21,7 @@ $navbar-default-bg: #a3c2c2;
 }
 
 .jumbotron {
-   background-image: asset-url('report_app.jpg');
+   background-image: asset-url('result_analytics.jpg');
    background-size: cover;
    height: 550px;
 }
@@ -29,6 +29,7 @@ $navbar-default-bg: #a3c2c2;
 .jumbotron h1 {
   color: #3f3f5a;
   text-align: center;
+  margin-top: 120px;
   margin-bottom: 30px;
   letter-spacing: -1px;
   font-weight: bold;

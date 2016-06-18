@@ -64,7 +64,7 @@
   </div>
   <div class="container">
     <div class="col-sx-6">
-      <script>
+     <!-- <script>
        $(function () {
     // Create the chart
     $('#container').highcharts({
@@ -79,11 +79,11 @@
         },
         xAxis: {
             type: 'category'
-            categories:  <%= Greport.toppernames().to_s %>
+            categories: <%= Greport.toppernames() %>
         },
         yAxis: {
             title: {
-                text: 'Percentage'
+                text: 'Total percent market share'
             }
 
         },
@@ -108,7 +108,31 @@
         series: [{
             name: 'Brands',
             colorByPoint: true,
-            data:  <%= Greport.toppers() %>
+            data: [{
+                name: 'Microsoft Internet Explorer',
+                y: 56.33,
+                drilldown: 'Microsoft Internet Explorer'
+            }, {
+                name: 'Chrome',
+                y: 24.03,
+                drilldown: 'Chrome'
+            }, {
+                name: 'Firefox',
+                y: 10.38,
+                drilldown: 'Firefox'
+            }, {
+                name: 'Safari',
+                y: 4.77,
+                drilldown: 'Safari'
+            }, {
+                name: 'Opera',
+                y: 0.91,
+                drilldown: 'Opera'
+            }, {
+                name: 'Proprietary or Undetectable',
+                y: 0.2,
+                drilldown: null
+            }]
         }],
         drilldown: {
             series: [{
@@ -296,7 +320,24 @@
         }
     });
 });
-        </script>
+
+      </script>-->
+
+      <table border="I">
+        <thead>
+          <tr>
+            <td>Names</td>
+            <td>Percentage</td>
+          </tr>
+        </thead>
+      <% @toppers.each do |topper| %>
+      <tr>
+        <td><%= topper.name %></td>
+        <td><%= topper.percent %></td>
+      </tr>
+        <% end %>
+      </table>
+
   </div>
 </div>
 </div>
@@ -348,6 +389,8 @@
 </div>
 <br>
 -->
+<div class= "row">
+<div class = "column-md-6">
 <div class="media">
   <div class="media-body">
 <h2>Import Data</h2>
@@ -357,5 +400,10 @@
 <% end %><br>
     [ <%= link_to 'Add new Record', new_greport_path %> ]
 
+      </div>
+    </div>
   </div>
+  <!--<div class="column-md-6">
+    <%= link_to 'Print this Page', "javascript:print()" %>
+  </div>-->
 </div>
