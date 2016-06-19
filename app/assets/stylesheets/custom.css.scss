@@ -5,14 +5,14 @@ $navbar-default-bg: #a3c2c2;
 #logo {
   float: left;
   font-size: 1.7em;
-  color: #fff;
+  color: #000;
   text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
 }
 
 #logo:hover {
-  color: #fff;
+  color: #000;
   text-decoration: none;
 }
 
@@ -26,6 +26,8 @@ $navbar-default-bg: #a3c2c2;
    height: 550px;
 }
 
+
+
 .jumbotron h1 {
   color: #3f3f5a;
   text-align: center;
@@ -37,8 +39,12 @@ $navbar-default-bg: #a3c2c2;
 
 .btn-xlarge {
   font-size: 1.7em;
+  font-color: #fff;
 }
-
+.btn-primary.outline {
+	border: 2px solid #0099cc;
+	color: #0099cc;
+}
 .footer {
   margin-top: 45px;
   padding-top: 5px;
@@ -92,3 +98,10 @@ a:link {
 a:active {
 	text-decoration: none;
 }
+
+#container p {
+  letter-spacing: -0.5px;
+   font-family: courier;
+   line-height: 30px;
+}
+

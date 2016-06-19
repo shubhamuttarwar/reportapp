@@ -1,14 +1,16 @@
 
-<div class="media">
-  <div class="media-body">
-<h2>Import Data</h2>
-  <%= form_tag  import_greports_path, multipart: true do %>
-  <%= file_field_tag :file %><br>
-  <%= submit_tag "Import" %>
-<% end %><br>
-<div>
- <%= link_to "Generate Report", greports_path, class: "btn btn-success btn-lg btn-xlarge-shubham" %>
 
-
+    <div class="media">
+      <div class="media-body">
+        <h2>Import Data</h2>
+        <%= form_tag  import_greports_path, multipart: true do %>
+        <%= file_field_tag :file %><br>
+        <%= submit_tag "Import" %>
+        <% end %><br>
+        <div>
+          <%= link_to "Generate Report", greports_path, class: "btn btn-success btn-lg btn-xlarge" %>
+          <%= link_to "View Previous Report", greports_path, class: "btn btn-primary.outline btn-lg btn-xlarge" %>
+        </div>
       </div>
     </div>
+  </div>
