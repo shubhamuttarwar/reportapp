@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav">
         <li><%= link_to "About Us", about_path %></li>
         <% if logged_in? %>
-          <li><%= link_to "Generate Reports", reports_path %></li>
+          <li><%= link_to "Generate Reports", buildlist_new_greport_path %></li>
         <% end %>
         <li><%= link_to "Contact Us" , contact_path %></li>
       </ul>

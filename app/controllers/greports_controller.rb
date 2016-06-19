@@ -13,6 +13,7 @@ class GreportsController < ApplicationController
   # GET /greports/1
   # GET /greports/1.json
   def show
+
  end
 
 
@@ -59,17 +60,28 @@ class GreportsController < ApplicationController
   # DELETE /greports/1
   # DELETE /greports/1.json
   def destroy
-    @greport.destroy
+    @destroy=Greport.all
+    @destroy.destroy
+    #@greport.destroy
     respond_to do |format|
-      format.html { redirect_to greports_url, notice: 'Record was successfully destroyed.' }
+      format.html { redirect_to buildlist_new_greport_path, notice: 'Records were successfully destroyed.You can now create a a new report!' }
+      format.json { head :no_content }
+    end
+  end
+
+  def destroyall
+    Greport.destroy
+    respond_to do |format|
+      format.html { redirect_to buildlist_new_greport_path, notice: 'Records were successfully destroyed.You can now create a a new report!' }
       format.json { head :no_content }
     end
   end
 
   def import
     Greport.import(params[:file])
-    redirect_to(greports_path,notice: "Imported successfully")
+    redirect_to(buildlist_new_greport_path,notice: "Imported successfully")
   end
+
 
 
   private

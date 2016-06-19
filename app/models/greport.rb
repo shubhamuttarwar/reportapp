@@ -81,4 +81,8 @@ class Greport < ActiveRecord::Base
     end
     return obarray
     end
+
+    def self.destroy
+     Greport.delete_all
+    end
   end

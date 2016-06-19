@@ -157,17 +157,22 @@ th {
 </table>
 </div>
 </div>
-<br>
--->
-<div class="media">
+<br>-->
+
+<!--<div class="media">
   <div class="media-body">
 <h2>Import Data</h2>
   <%= form_tag  import_greports_path, multipart: true do %>
   <%= file_field_tag :file %><br>
   <%= submit_tag "Import" %>
-<% end %><br>
-    [ <%= link_to 'Add new Record', new_greport_path %> ][ <%= link_to 'Generate Report', greport_path%> ]
+<% end %><br>-->
+    [ <%= link_to 'Add new Record', new_greport_path %> ]
 
+    <div class="container">
+
+ <p align ="center"><%= link_to "Create a New Report", destroyall_new_greport_path, class: "btn btn-success btn-lg btn-xlarge-shubham" %></p>
+      <p><h3 align="center">By clicking this button the previous data will be deleted and you will be redirected to create a new report.We recommend you to print this page for later references.</h3>(You can do it by ctrl+p on your keyboard)</p>
+    </div>
       </div>
     </div>
 
