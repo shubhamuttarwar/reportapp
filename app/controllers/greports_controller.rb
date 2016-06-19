@@ -8,12 +8,13 @@ class GreportsController < ApplicationController
      @toppers=Greport.all.order(percent: :desc).limit(3)
   end
 
+   def buildlist
+   end
   # GET /greports/1
   # GET /greports/1.json
   def show
+ end
 
-
-  end
 
   # GET /greports/new
   def new

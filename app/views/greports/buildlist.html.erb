@@ -1,0 +1,11 @@
+<div class="media">
+  <div class="media-body">
+<h2>Import Data</h2>
+  <%= form_tag  import_greports_path, multipart: true do %>
+  <%= file_field_tag :file %><br>
+  <%= submit_tag "Import" %>
+<% end %><br>
+    [ <%= link_to 'Add new Record', new_greport_path %> ][ <%= link_to 'Generate Report', greport_path%> ]
+
+      </div>
+    </div>
